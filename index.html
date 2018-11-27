@@ -3,22 +3,35 @@
 
 <head>
   <ul>
+    <li><a href="index.html">Home</a></li>
     <li><a href="maritime.html">Maritime</a></li>
     <li><a href="avery_hill.html">Avery Hill</a></li>
     <li><a href="medway.html">Medway</a></li>
     <li><a href="london_bridge.html">London Bridge</a></li>
+    <li><a href="about.html">About</a></li>
   </ul>
 
   <h1> The WeatherSite! </h1>
 </head>
 
-<body>
-  <p> Select Location: </p>
-  <select name='location'>
-    <option value='default'></option>
-    <option value="avery_hill">Avery Hill</option>
-    <option value="maritime">Maritime</option>
-    <option value="medway">Medway</option>
-    <option value="london_bridge">London Bridge</option>
+<body background="locations.png">
+  <script type="text/javascript">
+    function goToNewPage()
+    {
+        var url = document.getElementById('list').value;
+        if(url != 'none') {
+            window.location = url;
+        }
+    }
+</script>
+  <form>
+  <select name="location" id="list" accesskey="target">
+    <option value='default' selected>Select Location:</option>
+    <option value="avery_hill.html">Avery Hill</option>
+    <option value="maritime.html">Maritime</option>
+    <option value="medway.html">Medway</option>
+    <option value="london_bridge.html">London Bridge</option>
   </select>
+  <input type=button value="Go" onclick="goToNewPage()"/>
+  </form>
 </body>
